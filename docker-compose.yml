@@ -1,0 +1,10 @@
+services:
+  selenium:
+    image: selenium/standalone-chrome:4.51.0-20261010
+
+  tests:
+    build: .
+    depends_on:
+      - selenium
+    volumes:
+      - ./allure-results:/app/allure-results
